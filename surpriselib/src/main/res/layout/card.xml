@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/rlSimpleCardParent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/app_background">
+        <ImageView
+                android:id="@+id/ivImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:layout_centerHorizontal="true"/>
+        <RelativeLayout
+                android:id="@+id/belowContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/card_title_background"
+                android:layout_below="@id/ivImage">
+            <TextView
+                    android:id="@+id/smallRed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/smallred"
+                    android:scaleType="centerCrop"
+                    android:text="     "
+                    android:layout_alignParentRight="true"/>
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="7dp"
+                    android:src="@drawable/right_arrow"
+            />
+
+            <TextView
+                    android:id="@+id/app_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/suggestion_title"
+                    android:maxLines="2"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="2dp"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="2dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@id/smallRed"
+                    android:gravity="left"/>
+        </RelativeLayout>
+</RelativeLayout>

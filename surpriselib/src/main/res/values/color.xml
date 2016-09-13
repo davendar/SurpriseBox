@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="notification_background">#D5D5D5</color>
+    <color name="translucent_white">#CCFFFFFF</color>
+    <color name="default_heading">#383838</color>
+    <color name="default_red">#FE1340</color>
+    <color name="app_background">#D5D5D5</color>
+    <color name="card_title_background">#ffffff</color>
+    <color name="card_text">#4a4a4a</color>
+    <color name="cta_back">#9b9b9b</color>
+    <color name="settings_term_sep">#4a4a4a</color>
+    <color name="setting_visible_part">#80000000</color>
+    <color name="suggestion_title">#2B2B2B</color>
+</resources>

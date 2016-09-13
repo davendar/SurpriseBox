@@ -1,0 +1,59 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    publishNonDefault true
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+    signingConfigs {
+        release {
+            storeFile file("../certs/keystore.jks")
+            storePassword "surprise123"
+            keyAlias "surprise"
+            keyPassword "surprise123"
+        }
+    }
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            zipAlignEnabled true
+        }
+    }
+}
+
+dependencies {
+    compile (name: 'AdendaSDK', ext: 'aar')
+    compile 'com.google.code.gson:gson:2.4'
+
+
+    compile "com.android.support:recyclerview-v7:23.4.0"
+    compile "com.squareup.picasso:picasso:2.5.2"
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile "com.google.dagger:dagger:2.0"
+    apt "com.google.dagger:dagger-compiler:2.0"
+    provided "org.glassfish:javax.annotation:10.0-b28"
+
+    compile "com.inmobi.monetization:inmobi-ads:5.3.1"
+    compile "com.google.android.gms:play-services-basement:${gmsVersion}"
+    compile "com.google.android.gms:play-services-location:${gmsVersion}"
+    compile('com.facebook.android:audience-network-sdk:4.11.0') {
+        transitive = true;
+        exclude group: "com.google.android.gms", module: "play-services-ads"
+        exclude group: "com.google.android.gms", module: "play-services-basement"
+        exclude group: "ads", module: "AdQuality"
+    }
+
+    testCompile 'junit:junit:4.12'
+}

@@ -1,0 +1,164 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.inmobi.surprise.lib">
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
+    <!--adenda permissions-->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <!--InMobiSdkPermissions-->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+
+
+    <application android:allowBackup="false"
+                 android:label="@string/app_name"
+                 android:icon="@drawable/app_logo"
+                 android:theme="@android:style/Theme.Holo.Light">
+
+        <activity android:name=".android.SplashActivity"
+                  android:label="@string/app_name"
+                  android:launchMode="singleTask"
+                  android:screenOrientation="portrait"
+                  android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+                  android:icon="@drawable/app_logo">
+        </activity>
+
+        <activity android:name=".android.login.LoginActivity"
+                  android:exported="false"
+                  android:label="@string/app_name"
+                  android:launchMode="singleTask"
+                  android:screenOrientation="portrait"
+                  android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+                  android:icon="@drawable/app_logo">
+        </activity>
+
+        <activity android:name=".android.AdPreloadActivity"
+                  android:exported="false"
+                  android:label="@string/app_name"
+                  android:launchMode="singleTask"
+                  android:screenOrientation="portrait"
+                  android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+                  android:icon="@drawable/app_logo">
+        </activity>
+
+        <activity android:name=".android.MainActivity"
+                  android:exported="false"
+                  android:label="@string/app_name"
+                  android:launchMode="singleTask"
+                  android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+                  android:screenOrientation="portrait"
+                  android:icon="@drawable/app_logo">
+        </activity>
+
+        <activity android:name=".android.TcActivity"
+                  android:exported="false"
+                  android:label="@string/app_name"
+                  android:launchMode="singleTask"
+                  android:screenOrientation="portrait"
+                  android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+                  android:icon="@drawable/app_logo">
+        </activity>
+
+        <activity android:name=".android.SettingsActivity"
+                  android:exported="false"
+                  android:label="@string/app_name"
+                  android:launchMode="singleTask"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/Theme.Transparent"
+                  android:icon="@drawable/app_logo">
+        </activity>
+
+        <receiver android:name=".notification.NotificationReceiver"
+                  android:exported="true"
+                  android:enabled="true">
+            <intent-filter>
+                <action android:name="com.inmobi.CREATE_NOTIFICATION"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".notification.NotificationService"/>
+
+        <activity
+                android:name="com.inmobi.rendering.InMobiAdActivity"
+                android:configChanges="keyboardHidden|orientation|keyboard|smallestScreenSize|screenSize"
+                android:hardwareAccelerated="true"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+        <receiver
+                android:name="com.inmobi.commons.core.utilities.uid.ImIdShareBroadCastReceiver"
+                android:enabled="true"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="com.inmobi.share.id"/>
+            </intent-filter>
+        </receiver>
+
+        <service
+                android:name="com.inmobi.signals.activityrecognition.ActivityRecognitionManager"
+                android:enabled="true"/>
+
+
+        <activity
+                android:name="sdk.adenda.lockscreen.LockScreenAppActivity"
+                android:label="@string/app_name"
+                android:theme="@android:style/Theme.NoTitleBar"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:launchMode="singleTask"
+                android:taskAffinity="sdk.adenda.lockscreen"
+                android:process=":adenda">
+        </activity>
+        <activity android:name="sdk.adenda.lockscreen.LockScreenHelperActivity"
+                  android:theme="@android:style/Theme.Translucent.NoTitleBar"
+                  android:process=":adenda"
+                  android:taskAffinity="sdk.adenda.lockscreen">
+        </activity>
+        <service android:name="sdk.adenda.lockscreen.LockscreenService"
+                 android:process=":adenda"/>
+        <service android:name="sdk.adenda.lockscreen.RetrieveAdService"
+                 android:process=":adenda"/>
+        <service android:name="sdk.adenda.lockscreen.RecordImprService"
+                 android:process=":adenda"/>
+
+        <receiver android:enabled="true"
+                  android:name="sdk.adenda.lockscreen.AdendaReceiver"
+                  android:process=":adenda">
+            <intent-filter >
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package"
+                      android:path="sdk.adenda.lockscreen.AdendaReceiver" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <data android:scheme="package"
+                      android:path="sdk.adenda.lockscreen.AdendaReceiver"/>
+            </intent-filter>
+        </receiver>
+
+
+
+
+        <meta-data
+                android:name="com.google.android.gms.version"
+                android:value="@integer/google_play_services_version"/>
+
+        <meta-data android:name="adenda_app_id" android:value="EYLPOYOIMDWL84ATGSFB"/>
+        <meta-data android:name="adenda_app_key" android:value="XWL6IEOKNGEMMYHJNFR8SGMBOHUPU1SY6HFX0AVE"/>
+
+    </application>
+
+</manifest>

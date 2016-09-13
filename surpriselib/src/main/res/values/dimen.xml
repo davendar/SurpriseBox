@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size">19dp</dimen>
+    <dimen name="switch_width">190dp</dimen>
+    <dimen name="switch_thumb_width">95dp</dimen>
+    <dimen name="switch_thumb_height">95dp</dimen>
+    <dimen name="switch_track_height">40dp</dimen>
+    <dimen name="done_button_height">110dp</dimen>
+    <dimen name="big_card_stroke">1dp</dimen>
+    <dimen name="card_spacing">5dp</dimen>
+    <dimen name="below_content_height">30dp</dimen>
+    <dimen name="adjust">2dp</dimen>
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#DCDCDC">
+
+    <!-- Header aligned to top -->
+    <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/default_red"
+            android:orientation="horizontal"
+            android:gravity="center_vertical|start"
+            android:layout_gravity="center_horizontal">
+
+        <RelativeLayout
+                android:id="@+id/rlBackParent"
+                android:layout_width="50dp"
+                android:background="@drawable/back_selector"
+                android:layout_height="?android:attr/actionBarSize">
+            <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="13dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/back_arrow"/>
+        </RelativeLayout>
+        <TextView
+                android:id="@+id/tvTermsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="@string/terms"
+                android:fontFamily="sans-serif-light"
+                android:textColor="#ffffff"/>
+    </LinearLayout>
+    <LinearLayout
+            android:id="@+id/container"
+            android:layout_below="@id/header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:background="#DCDCDC">
+
+
+        <WebView
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <ProgressBar
+            android:id="@+id/webProgress"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:max="100"
+            android:indeterminate="false"
+            android:layout_centerInParent="true"/>
+
+
+</RelativeLayout>

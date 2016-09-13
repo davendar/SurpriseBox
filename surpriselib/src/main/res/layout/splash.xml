@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/app_background">
+    <ImageView
+            android:id="@+id/splashBackground"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/first_frag_background"
+            android:adjustViewBounds="true"/>
+
+
+    <RelativeLayout
+            android:id="@+id/rlCuratingParent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/preload_shadow"
+                android:layout_centerInParent="true"/>
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+            <ImageView
+                    android:id="@+id/ivProgress"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/progress_logo"
+                    android:layout_centerHorizontal="true"/>
+
+            <TextView
+                    android:id="@+id/tvCuratingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/curating"
+                    android:layout_below="@id/ivProgress"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/card_text"
+                    android:gravity="center"/>
+
+            <TextView
+                    android:id="@+id/tvCuratingText_second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvCuratingText"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/today"
+                    android:layout_marginTop="5dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/card_text"
+                    android:gravity="center"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+            android:id="@+id/NoInternetParent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone">
+        <ImageView
+                android:id="@+id/ivNoInternet"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/app_logo"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_internet_text"
+                android:layout_below="@id/ivNoInternet"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:textColor="#ED2045"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+            android:id="@+id/rlRetryParent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="gone">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/preload_shadow"
+                android:layout_centerInParent="true"/>
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+            <ImageView
+                    android:id="@+id/ivRetryAppLogo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/app_logo"
+                    android:layout_centerHorizontal="true"/>
+
+            <TextView
+                    android:id="@+id/tvOops"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/oops"
+                    android:layout_below="@id/ivRetryAppLogo"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:textSize="17dp"
+                    android:textColor="@color/card_text"
+                    android:gravity="center"/>
+
+            <TextView
+                    android:id="@+id/tvRetryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/retry_first"
+                    android:layout_below="@id/tvOops"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/card_text"
+                    android:gravity="center"/>
+
+            <TextView
+                    android:id="@+id/tvRetryText_second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvRetryText"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/retry_second"
+                    android:layout_marginTop="5dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/card_text"
+                    android:gravity="center"/>
+
+            <TextView
+                    android:id="@+id/tvRetryText_third"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvRetryText_second"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/retry_third"
+                    android:layout_marginTop="5dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/card_text"
+                    android:gravity="center"/>
+
+            <Button
+                    android:id="@+id/btnRetry"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/btn_cta"
+                    android:text="@string/retry"
+                    android:textSize="16dp"
+                    android:textColor="@android:color/white"
+                    android:layout_below="@id/tvRetryText_third"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+            />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>

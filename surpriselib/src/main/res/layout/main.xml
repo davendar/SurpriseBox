@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/app_background"
+>
+
+    <!-- Header aligned to top -->
+    <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/default_red"
+            android:orientation="horizontal"
+            android:gravity="center_vertical|start"
+            android:layout_gravity="center_horizontal">
+
+        <RelativeLayout
+                android:id="@+id/rlBurgerParent"
+                android:layout_width="50dp"
+                android:background="@drawable/back_selector"
+                android:layout_height="?android:attr/actionBarSize">
+            <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="13dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/burger_icon"/>
+        </RelativeLayout>
+        <TextView
+                android:id="@+id/tvAppName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:textColor="@android:color/white"
+                android:textStyle="normal"
+                android:text="@string/app_name"
+                android:layout_marginTop="-2dp"
+               />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvContainer"
+            android:layout_marginLeft="@dimen/card_spacing"
+            android:layout_below="@id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

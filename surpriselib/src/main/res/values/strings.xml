@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Surprize Box</string>
+    <string name="no_internet_text">No Internet connection found. Check your connection or try again.</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="terms_cond">
+        <u>Terms and Conditions</u>
+    </string>
+    <string name="by_tapping">By clicking this, I agree to the</string>
+    <string name="terms">Terms and Conditions</string>
+    <string name="terms_settings">Terms &#38; Conditions</string>
+    <string name="limit_notif">Limit Notifications</string>
+    <array name="age_range">
+        <item>18-24 yrs</item>
+        <item>24-36 yrs</item>
+        <item>36-50 yrs</item>
+        <item>50-75 yrs</item>
+    </array>
+
+    <string name="done_button">DONE</string>
+    <string name="notif_content">Today\&#39;s Surprise for you</string>
+    <string name="curating">Curating your surprises </string>
+    <string name="today">for today&#46;&#46;&#46;</string>
+    <string name="explore">Explore</string>
+    <string name="oops">Oops!</string>
+    <string name="retry">Retry</string>
+    <string name="retry_first">It looks like we couldn\&#39;t</string>
+    <string name="retry_second">find any surprises yet !</string>
+    <string name="retry_third">Go ahead and give it another try!</string>
+
+</resources>
