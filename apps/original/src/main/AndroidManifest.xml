@@ -23,12 +23,6 @@
 
         </activity>
 
-        <provider
-                android:name="sdk.adenda.modules.MultiprocessPreferences"
-                android:authorities="com.inmobi.surprise.adendapreferences"
-                android:exported ="false"
-        />
-
     </application>
 
 </manifest>
