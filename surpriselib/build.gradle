@@ -7,10 +7,10 @@ android {
     buildToolsVersion "23.0.3"
     signingConfigs {
         release {
-            storeFile file("../certs/keystore.jks")
-            storePassword "surprise123"
-            keyAlias "surprise"
-            keyPassword "surprise123"
+            storeFile file("../../certs/keystore.jks")
+            storePassword "abcdefgh123"
+            keyAlias "abcdefgh"
+            keyPassword "abcdefgh123"
         }
     }
 
